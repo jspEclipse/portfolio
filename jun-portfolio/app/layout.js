@@ -1,15 +1,5 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import ParticlesComponent from "./components/Particles";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -18,10 +8,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full bg-black">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="min-h-full flex justify-center"
+        style={{
+          background: `radial-gradient(circle at 40% 30%, rgba(255, 165, 0, 0.2), transparent 50%),
+             radial-gradient(circle at 80% 60%, rgba(138, 43, 226, 0.2), transparent 50%),
+             linear-gradient(to bottom, #0f0c29, #302b63)`,
+          color: "#fff",
+        }}
       >
+        <ParticlesComponent id="particles" />
         {children}
       </body>
     </html>
