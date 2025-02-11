@@ -1,22 +1,22 @@
 import { Nav } from "./components/Nav";
 import Profile from "./components/Profile";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import Content from "./components/Content";
 
 export default function Home() {
   return (
-    <div className="min-h-full min-w-[70%] flex-col flex text-white">
+    <div className="min-h-full w-[50%] flex-col flex text-white mb-9">
       <Nav/>
-      <div className="flex">
-              <div className="flex m-auto">
-                <Avatar className="w-20 h-20 mr-4">
-                  <AvatarImage src="/profile.jpg" />
-                  <AvatarFallback>JP</AvatarFallback>
-                </Avatar>
-                <div className="font-bold text-6xl tracking-wider m-auto">
-                  Jun Park
-                </div>
-              </div>
-          </div>
+      <div style={{
+      background: 'rgba(255, 255, 255, 0.07)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: '10px',
+    }}
+    className="h-full pl-14 pr-14 pt-5"
+    >
+      <Profile/>
+      <hr/>
+      <Content/>
+    </div>
     </div>
   );
 }
